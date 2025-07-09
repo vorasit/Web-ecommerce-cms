@@ -1,0 +1,17 @@
+{% extends "shop/base.html" %}
+
+{% block title %}
+    Checkout
+{% endblock %}
+
+{% block content %}
+    <h1>Checkout</h1>
+    <div class="order-form">
+        <p>Please fill in your details to complete the order.</p>
+        <form action="." method="post">
+            {{ form.as_p }}
+            <p><input type="submit" value="Place order" class="btn btn-primary"></p>
+            {% csrf_token %}
+        </form>
+    </div>
+{% endblock %}
